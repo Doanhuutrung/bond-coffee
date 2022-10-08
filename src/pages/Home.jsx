@@ -8,15 +8,24 @@ import '../styles/home.css';
 import Services from '../services/Services';
 import Products from '../components/Product/Products';
 import Drinks from '../assets/data/Drinks';
+import Barista from '../assets/images/barista.png';
+import Event from '../components/Product/Event';
 
 const Home = () => {
 
-  const [data,setData] = useState(Drinks)
+  const [SignatureDrink,setSignatureDrink] = useState([]);
+  const [BestSalesDrink,setBestSalesDrink] = useState([]);
   const year = new Date().getFullYear();
 
-  useEffect(() =>{
-      const filteredDrinks = Drinks.filter(item => item.category === 'chair');
-      setData(filteredDrinks);
+  useEffect(() => {
+      const filteredSignatureDrinks = Drinks.filter(
+        (item) => item.category === 'Coffee');
+
+        const filteredBestSalesDrinks = Drinks.filter(
+        (item) => item.category === 'Tea');
+
+        setSignatureDrink(filteredSignatureDrinks);
+        setBestSalesDrink(filteredBestSalesDrinks);
   },[]);
   return (<Logo title={'Home'}>
     <section className="home_section">
@@ -45,17 +54,58 @@ const Home = () => {
         </Row>
       </Container>
     </section>
-    <Services/>
+
+    <Services />
+
     <section className='hot_products'>
       <Container>
         <Row>
           <Col lg='12' className='text-center'>
             <h2 className='product_title'> Signature Drink </h2>
           </Col>
-          <Products data={data}/>
+          <Products data={SignatureDrink} />
         </Row>
       </Container>
     </section>
+    <section className='best_sales'>
+      <Container>
+        <Row>
+          <Col lg='12' className='text-center'>
+            <h2 className='section_title'> Best Sales </h2>
+          </Col>
+          <Products data={BestSalesDrink} />
+        </Row>
+      </Container>
+     </section>
+
+     <section className="timer_count">
+      <Container>
+        <Row>
+          <Col lg='6' md='6'>
+            <div className='event_content'>
+              <h2>
+                Cupping Day
+              </h2>
+              <p> this will be the day when bartenders can try their hand at their experience and learn more from their competitors. </p>
+            </div>
+            <Event />
+            <motion.button whileTap={{scale: 1.2}} className='join_btn'><Link to='/Shop'> Join Now </Link></motion.button>
+          </Col>
+          <Col lg='' md='20' className='text-end'>
+            <img src={Barista} alt=" "/>
+          </Col>
+        </Row>
+      </Container>
+     </section>
+     <section className="new_drinks">
+     <Container>
+        <Row>
+          <Col lg='12' className='text-center'>
+            <h2 className='section_title'> new Drinks for this season </h2>
+          </Col>
+        </Row>
+      </Container>
+     </section>
   </Logo>
   );
 }

@@ -71,7 +71,7 @@ const Drinks = [
     },
     {
         id:'05',
-        productName:'caca0',
+        productName:'cacao',
         imgUrl: drink5,
         category:'Coffee',
         price:'15$',
