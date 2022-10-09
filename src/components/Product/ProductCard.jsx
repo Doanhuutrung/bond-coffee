@@ -15,7 +15,7 @@ const ProductCard = ({item}) => {
       id: item.id,
       productName: item.productName,
       price: item.price,
-      image: item.imgUrl,
+      imgUrl: item.imgUrl,
     }));
     toast.success('you just have 1 drink to your cart');
   };
