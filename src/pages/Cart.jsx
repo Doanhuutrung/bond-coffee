@@ -6,10 +6,12 @@ import { Col, Container, Row } from 'reactstrap';
 import { motion } from 'framer-motion';
 import { cartActions } from '../redux/slices/cartSlice';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
-  const cartItems = useSelector(state => state.Cart.cartItem)
+  const cartItems = useSelector((state) => state.Cart.cartItem);
+  const totalAmount = useSelector((state) => state.Cart.totalAmount)
   return ( <Logo title='cart'>
     <MenuDrink title='Drink Cart' />
     <section>
@@ -41,6 +43,17 @@ const Cart = () => {
             )}
           </Col>
           <Col lg='8'>
+            <div>
+              <h6> Here is your bill </h6>
+              <span>{totalAmount}</span>
+            </div>
+            <div>
+              <p className='fs-5 mt-6'> Bill will be free shipping within 5km or over $200 </p>
+              <button className='buy_btn'><Link to='/Shop'> Let get more Drink !
+              </Link></button>
+              <button className='buy_btn'><Link to='/Checkout'> Checkout
+              </Link></button>
+            </div>
           </Col>
         </Row>
       </Container>   
