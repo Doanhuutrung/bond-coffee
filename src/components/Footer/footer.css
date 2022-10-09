@@ -1,0 +1,20 @@
+.footer{
+    padding-top: 50px;
+    padding-bottom: 30px;
+    background: bisque;
+}
+
+.footer_text{
+    line-height: 20px;
+}
+
+.footer_contact li span{
+    font-size: 1.5rem;
+}
+
+.footer_copyright{
+    color: black;
+    font-style: 0.9rem;
+    margin-top: 40px;
+    text-align: center;
+}

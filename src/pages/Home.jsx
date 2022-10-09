@@ -15,6 +15,7 @@ const Home = () => {
 
   const [SignatureDrink,setSignatureDrink] = useState([]);
   const [BestSalesDrink,setBestSalesDrink] = useState([]);
+  const [NewDrinks,setNewDrinks] = useState([]);
   const year = new Date().getFullYear();
 
   useEffect(() => {
@@ -24,8 +25,12 @@ const Home = () => {
         const filteredBestSalesDrinks = Drinks.filter(
         (item) => item.category === 'Tea');
 
+      const filteredNewDrinks = Drinks.filter(
+        (item) => item.category === 'Smoothie');
+
         setSignatureDrink(filteredSignatureDrinks);
         setBestSalesDrink(filteredBestSalesDrinks);
+        setNewDrinks(filteredNewDrinks);
   },[]);
   return (<Logo title={'Home'}>
     <section className="home_section">
@@ -103,6 +108,7 @@ const Home = () => {
           <Col lg='12' className='text-center'>
             <h2 className='section_title'> new Drinks for this season </h2>
           </Col>
+          <Products data={NewDrinks} />
         </Row>
       </Container>
      </section>
