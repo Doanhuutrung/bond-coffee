@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { NavLink } from 'react-router-dom';
 import './Header.css';
@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import logo from '../../assets/images/Logoshop.png';
 import user from '../../assets/images/avata.png';
 import { Container, Row } from 'reactstrap';
+import { useSelector } from 'react-redux';
 
 
 const nav__link = [
@@ -25,9 +26,25 @@ const nav__link = [
 
 const Header = () => {
 
+    const headerRef = useRef(null)
+    const totalQuantity = useSelector(state=>state.cart.totalQuantity)
+    const stickyHeader = () =>{
+      window.addEventListener('scroll', () => {
+        if(document.body.scrollTop > 60 || document.documentElement.scrollTop > 60){
+          headerRef.current.classList.add('sticky_header_scrolling')
+        } else {
+          headerRef.current.classList.remove('sticky_header_scrolling')
+        }
+      })
+    }
+    useEffect(()=> {
+        stickyHeader()
+        return () => window.removeEventListener ('scroll', stickyHeader);
+    });
+
 
   return (
-    <header className='header'>
+    <header className='header' ref={headerRef}>
       <Container>
         <Row>
           <div className='nav_wrapper'>
@@ -57,16 +74,10 @@ const Header = () => {
               </span>
               <span className='cart__icon'>
                 <i className="ri-cup-line"></i>
-                <span className='badge'>1</span>
+                <span className='badge'>{totalQuantity}</span>
               </span>
               <span>
                 <motion.img whileTap={{ scale: 1.1 }} src={user} alt="" />
-              </span>
-            </div>
-
-            <div className="mobile_menu">
-              <span>
-                <i className="ri-menu-line"></i>
               </span>
             </div>
           </div>

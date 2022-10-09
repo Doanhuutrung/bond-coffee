@@ -1,0 +1,88 @@
+.drink_detail{
+    margin-top: 40px;
+}
+.drink_detail h2{
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.drink_rating{
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.drink_rating span i{
+    color: chocolate;
+}
+.drink_rating p span{
+    font-weight: 500;
+}
+.drink_price{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+.drink_des{
+    margin-top: 3px;
+}
+
+.desc_wrapper h6{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+.active_desc{
+    font-weight: 400;
+}
+
+.review_title p{
+    line-height: 40px;
+}
+
+.review_wraper ul li span{
+    color:darkred;
+    font-weight: 600;
+}
+
+.review_wraper ul li p{
+    margin-top: 10px;
+}
+
+.comment_form{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.comment_form h4{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 30px;
+}
+.form_group{
+    margin-top: 20px;
+}
+.form_group input:focus, .form_group textarea:focus{
+    outline: none;
+}
+.form_group input, .form_group textarea{
+    width: 100%;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 8px 20px;
+}
+
+.form_group span{
+    display: flex;
+    align-items: center;
+    column-gap: 4px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.relate_content{
+    font-style: 1.2rem;
+    font-weight: 400;
+    margin-top: 40px;
+}
