@@ -29,7 +29,7 @@ const Drinks = [
     },
     {
         id:'02',
-        productName:'milk Coffee',
+        productName:'Milk Coffee',
         imgUrl: drink2,
         category:'Coffee',
         price:'20$',
@@ -45,7 +45,7 @@ const Drinks = [
     },
     {
         id:'03',
-        productName:'latte',
+        productName:'Latte',
         imgUrl: drink3,
         category:'Coffee',
         price:'15$',
@@ -61,7 +61,7 @@ const Drinks = [
     },
     {
         id:'04',
-        productName:'cappuccino',
+        productName:'Cappuccino',
         imgUrl: drink4,
         category:'Coffee',
         price:'15$',
@@ -77,7 +77,7 @@ const Drinks = [
     },
     {
         id:'05',
-        productName:'cacao',
+        productName:'Cacao',
         imgUrl: drink5,
         category:'Coffee',
         price:'15$',
@@ -93,7 +93,7 @@ const Drinks = [
     },
     {
         id:'06',
-        productName:'oat milk',
+        productName:'Oat milk',
         imgUrl: drink6,
         category:'Coffee',
         price:'15$',

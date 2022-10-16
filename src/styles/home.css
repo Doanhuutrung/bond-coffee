@@ -17,6 +17,9 @@
 .home_content{
     padding-top: 60px;
 }
+.product_title{
+    height: 70px;
+}
 .buy_btn{
     border: none;
     outline: none;
@@ -27,6 +30,9 @@
     cursor: pointer;
     font-size: 1rem;
     margin-top: 30px;
+}
+.section_title{
+    height: 70px;
 }
 
 .buy_btn a:hover{

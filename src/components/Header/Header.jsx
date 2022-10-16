@@ -27,7 +27,7 @@ const nav__link = [
 const Header = () => {
 
     const headerRef = useRef(null);
-    const totalQuantity = useSelector(state=>state.cart.totalQuantity);
+    const totalQuantity = useSelector((state) => state.cart.totalQuantity);
     // const menuRef = useRef(null);
     const navigate = useNavigate();
     const stickyHeader = () =>{

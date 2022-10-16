@@ -23,11 +23,11 @@ const DrinkDetail = () => {
   const drink = Drinks.find(item => item.id === id);
   const {imgUrl, productName, price, review, description, avgRating, shortDesc,category } = drink;
   const related = Drinks.filter((item) => item.category === category);
+
   const submitHandler = (c) =>{
     c.preventDefault()
     const reviewUserName = reviewbyUser.current.value;
     const reviewUserMessage = reviewMessage.current.value;
-
     const objectReview ={
       userName: reviewUserName,
       text: reviewUserMessage,
@@ -48,19 +48,20 @@ const DrinkDetail = () => {
     toast.success('Drink added successfully')
   }
 
-  return <Logo title={productName}>
+  return (
+    <Logo title={productName}>
     <MenuDrink title={productName}/>
       <section className='pt-1'>
         <Container>
           <Row>
-            <Col lg='6'>
+            <Col className='product_image'>
               <img src={imgUrl} alt='' />
             </Col>
-            <Col lg='6'>
+            <Col lg=''>
               <div className="drink_detail">
                 <h2>{productName}</h2>
                 <div className='drink_rating gap-4'>
-                  <div>
+                  <div >
                     <span onClick={() => setRating(1)}> <i className="ri-star-fill"></i></span>
                     <span onClick={() => setRating(2)}> <i className="ri-star-fill"></i></span>
                     <span onClick={() => setRating(3)}> <i className="ri-star-fill"></i></span>
@@ -71,8 +72,8 @@ const DrinkDetail = () => {
                 </div>
                 <div className='d-flex align-items-center gap-4'>
                   <span className='drink_price'>{price}</span>
-                  <span> Category: {category.toUpperCase()}</span>
-                </div>
+                  {/* <span> Category: {category.toUpperCase()}</span> */}  
+                </div>  
                 <p className='drink_des'>{shortDesc}</p>
                 <motion.button whileTap={{scale:1.2}}  className='buy_btn' onClick={addtoCart}> Add to Cart DrinkDetail </motion.button>
               </div>
@@ -83,21 +84,23 @@ const DrinkDetail = () => {
       <section>
         <Container>
           <Row>
-            <Col lg='10'>
+            <Col lg='15'>
               <div className='desc_wrapper gap-5'>
                 <h6 className={`${view==='description' ? 'active_desc': ''}`} onClick ={ () => setView('description')}>
                   Description
                 </h6>
-                <h6> Reviews ({review.length})</h6>
-              </div>
-
+                <h6 className={`${view==='review' ? 'active_desc:':''}`} onClick ={() => setView('review')}> 
+                  Reviews ({review.length})</h6>
+                </div>
               {view === 'description' ? (<div className='desc_title mt-4'>
                      <p> {description}</p>
-                    </div> ) : ( 
-              <div className='drink_review mt-6'>
+                    </div>
+                     ) : ( 
+              <div className='drink_review mt-4 '>
                  <div className='review_wraper'>
                   <ul>
-                    {review?.map((item, index) => (
+                    {
+                      review?.map((item, index) => (
                       <li key={index} className='mb-5'>
                         <h6> Le Anh Tuan </h6>
                         <span> {item.rating} (rating) </span>
@@ -112,16 +115,17 @@ const DrinkDetail = () => {
                             <input type='text' placeholder='Enter your name' ref={reviewbyUser} />
                         </div>
 
-                        <div className='form_group gap-5 align-items-center'>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(1)}>1<i className="ri-star-fill"></i> </motion.span>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(2)}>2<i className="ri-star-fill"></i> </motion.span>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(3)}>3<i className="ri-star-fill"></i> </motion.span>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(4)}>4<i className="ri-star-fill"></i> </motion.span>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(5)}>5<i className="ri-star-fill"></i> </motion.span>
+                        <div className='form_group gap-5 align-items-center '>
+                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(1)}><i className="ri-star-fill"></i> </motion.span>
+                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(2)}><i className="ri-star-fill"></i> </motion.span>
+                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(3)}><i className="ri-star-fill"></i> </motion.span>
+                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(4)}><i className="ri-star-fill"></i> </motion.span>
+                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(5)}><i className="ri-star-fill"></i> </motion.span>
                         </div>
                         <div className='form_group'>
                             <textarea ref={reviewMessage} rows={10} type='text' placeholder='let me know how you feel about this drink ^^'/>
                         </div>
+                        <button type='submit' className='buy_btn'> Submit </button>
                       </form>
                   </div>
                  </div>
@@ -129,14 +133,13 @@ const DrinkDetail = () => {
               )}
             </Col>
             <Col lg='12'>
-              <h2 className="relate_content"> Other water dishes you may like
-                <Products data={related}/>
-              </h2>
+              <h2 className="relate_content"> Other water dishes you may like</h2>
             </Col>
+            <Products data={related}/>
           </Row>
         </Container>
       </section>
   </Logo>
-};
+)};
 
 export default DrinkDetail

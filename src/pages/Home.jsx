@@ -47,7 +47,7 @@ const Home = () => {
               It will be 1 choice that is difficult to ignore when you are a coffee addict because you will not be able to resist the taste and aroma that the farmers make into it.
               </p>
               <motion.button whileTap={{scale: 1.2 }} className='buy_btn'>
-                <Link to='Shop'>Buy Now</Link>
+                <Link to='/Shop'>Buy Now</Link>
               </motion.button>
             </div>
           </Col>
@@ -94,7 +94,7 @@ const Home = () => {
               <p> this will be the day when bartenders can try their hand at their experience and learn more from their competitors. </p>
             </div>
             <Event />
-            <motion.button whileTap={{scale: 1.2}} className='join_btn'><Link to='/Shop'> Join Now </Link></motion.button>
+            <motion.button whileTap={{scale: 1.2}} className='join_btn'><Link to='https://docs.google.com/forms/d/e/1FAIpQLSdCVDXbldn8obRqa6xkswBvRG6Zk3jT0Xd35YtMq0wbOHPk2g/viewform?usp=sf_link'> Join Now </Link></motion.button>
           </Col>
           <Col lg='' md='20' className='text-end'>
             <img src={Barista} alt=" "/>

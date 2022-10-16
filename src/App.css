@@ -16,7 +16,6 @@
 
 /* reset browser default */
 * {
-  margin: 4px;
   padding: 0;
   box-sizing: border-box;
 }

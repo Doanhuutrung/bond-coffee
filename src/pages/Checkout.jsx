@@ -8,7 +8,7 @@ import '../styles/checkout.css';
 
     
     const Checkout = () => {
-      const totalQuantity =useSelector((state) => state.cart.totalQuantity)
+      const totalQuantity = useSelector((state) => state.cart.totalQuantity)
       const totalAmount = useSelector((state) => state.cart.totalAmount)
       return (
         <Logo title='Checkout'>

@@ -10,17 +10,17 @@ import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.Cart.cartItem);
-  const totalAmount = useSelector((state) => state.Cart.totalAmount)
+  const cartItems = useSelector((state) => state.cart.cartItem);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
+
   return ( <Logo title='cart'>
     <MenuDrink title='Drink Cart' />
     <section>
       <Container>
         <Row>
           <Col lg='12'>
-            {
-              cartItems.lenght===0 ? (
-              <h2 className='fs-4 text-center '> Oops! you have no drink in your cart </h2>
+            {cartItems.length === 0 ?(
+              <h2 className='fs-4 text-center'> Oops! you have no drink in your cart </h2>
               ) : (       
             <table className='table bordered'>
               <thead>
@@ -42,6 +42,7 @@ const Cart = () => {
             </table>
             )}
           </Col>
+
           <Col lg='8'>
             <div>
               <h6> Here is your bill </h6>
@@ -69,11 +70,14 @@ const Tr = ({item}) => {
 
   }
   return <tr>
-  <td><img src={item.imgUrl} alt="" /></td>
-  <td> {item.productName}</td>
-  <td> {item.price}</td>
-  <td> {item.quantity}</td>
-  <td> <motion.i whileTap={{scale: 1.2}} onClick={deleteDrinks} className="ri-delete-bin-7-line"></motion.i> </td>
+    <td><img src={item.imgUrl} alt="" /></td>
+    <td> {item.productName}</td>
+    <td> {item.price}</td>
+    <td> {item.quantity}</td>
+    <td> 
+      <motion.i whileTap={{scale: 1.2}} onClick={deleteDrinks} className="ri-delete-bin-7-line">
+      </motion.i>
+    </td>
   </tr>
 }
 

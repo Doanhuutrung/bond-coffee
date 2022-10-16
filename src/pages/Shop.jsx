@@ -37,7 +37,6 @@ const Shop = () => {
     const handleSearch = b => {
       const searchTerm = b.target.value
       const searchedDrinks = Drinks.filter(item => item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
-
       setDrinksData(searchedDrinks)
     }
   return (
@@ -46,7 +45,7 @@ const Shop = () => {
         <section>
           <Container>
             <Row>
-              <Col lg='4' md='6'>
+              <Col >
                 <div className="filter_widget">
                   <select onChange={handleFilter}>
                     <option> Filter by category </option>
@@ -56,9 +55,9 @@ const Shop = () => {
                   </select>
                 </div>
               </Col>
-              <Col lg='4' md='6'>
+              <Col >
               <div className="filter_widget">
-                  <select >
+                  <select onChange={handleFilter}>
                     <option> Sort by category </option>
                     <option value="popular"> Popular Drink </option>
                     <option value="signature"> Signature Drink </option>
