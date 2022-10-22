@@ -1,4 +1,4 @@
-
+import '../styles/login.css';
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import Logo from '../components/Logo/Logo';
