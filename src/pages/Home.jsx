@@ -1,4 +1,4 @@
-import React , {useState, useEffect }from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Logo from '../components/Logo/Logo';
@@ -13,25 +13,25 @@ import Event from '../components/Product/Event';
 
 const Home = () => {
 
-  const [SignatureDrink,setSignatureDrink] = useState([]);
-  const [BestSalesDrink,setBestSalesDrink] = useState([]);
-  const [NewDrinks,setNewDrinks] = useState([]);
+  const [SignatureDrink, setSignatureDrink] = useState([]);
+  const [BestSalesDrink, setBestSalesDrink] = useState([]);
+  const [NewDrinks, setNewDrinks] = useState([]);
   const year = new Date().getFullYear();
 
   useEffect(() => {
-      const filteredSignatureDrinks = Drinks.filter(
-        (item) => item.category === 'Coffee');
+    const filteredSignatureDrinks = Drinks.filter(
+      (item) => item.category === 'Coffee');
 
-        const filteredBestSalesDrinks = Drinks.filter(
-        (item) => item.category === 'Tea');
+    const filteredBestSalesDrinks = Drinks.filter(
+      (item) => item.category === 'Tea');
 
-      const filteredNewDrinks = Drinks.filter(
-        (item) => item.category === 'Smoothie');
+    const filteredNewDrinks = Drinks.filter(
+      (item) => item.category === 'Smoothie');
 
-        setSignatureDrink(filteredSignatureDrinks);
-        setBestSalesDrink(filteredBestSalesDrinks);
-        setNewDrinks(filteredNewDrinks);
-  },[]);
+    setSignatureDrink(filteredSignatureDrinks);
+    setBestSalesDrink(filteredBestSalesDrinks);
+    setNewDrinks(filteredNewDrinks);
+  }, []);
   return (<Logo title={'Home'}>
     <section className="home_section">
       <Container>
@@ -43,10 +43,10 @@ const Home = () => {
               </p>
               <h2> This is specialty cofee</h2>
               <p>
-              V60 is based on drip coffee to bring precious essences in each Arabica coffee bean of the regions. 
-              It will be 1 choice that is difficult to ignore when you are a coffee addict because you will not be able to resist the taste and aroma that the farmers make into it.
+                V60 is based on drip coffee to bring precious essences in each Arabica coffee bean of the regions.
+                It will be 1 choice that is difficult to ignore when you are a coffee addict because you will not be able to resist the taste and aroma that the farmers make into it.
               </p>
-              <motion.button whileTap={{scale: 1.2 }} className='buy_btn'>
+              <motion.button whileTap={{ scale: 1.2 }} className='buy_btn'>
                 <Link to='/Shop'>Buy Now</Link>
               </motion.button>
             </div>
@@ -81,9 +81,9 @@ const Home = () => {
           <Products data={BestSalesDrink} />
         </Row>
       </Container>
-     </section>
+    </section>
 
-     <section className="timer_count">
+    <section className="timer_count">
       <Container>
         <Row>
           <Col lg='6' md='6'>
@@ -94,16 +94,22 @@ const Home = () => {
               <p> this will be the day when bartenders can try their hand at their experience and learn more from their competitors. </p>
             </div>
             <Event />
-            <motion.button whileTap={{scale: 1.2}} className='join_btn'><Link to='https://docs.google.com/forms/d/e/1FAIpQLSdCVDXbldn8obRqa6xkswBvRG6Zk3jT0Xd35YtMq0wbOHPk2g/viewform?usp=sf_link'> Join Now </Link></motion.button>
+            <motion.button whileTap={{ scale: 1.2 }} className='join_btn'> 
+              {/* window.location.replace('https://docs.goog zle.com/forms/d/e/1FAIpQLSdCVDXbldn8obRqa6xkswBvRG6Zk3jT0Xd35YtMq0wbOHPk2g/viewform?usp=sf_link')
+              <Link to='/Join'> Join Now </Link> */}
+              <a href='https://docs.google.com/forms/d/e/1FAIpQLSdCVDXbldn8obRqa6xkswBvRG6Zk3jT0Xd35YtMq0wbOHPk2g/viewform?usp=sf_link' target='_blank' rel='noreferrer'>
+                  Join Now
+              </a>
+            </motion.button>
           </Col>
           <Col lg='' md='20' className='text-end'>
-            <img src={Barista} alt=" "/>
+            <img src={Barista} alt=" " />
           </Col>
         </Row>
       </Container>
-     </section>
-     <section className="new_drinks">
-     <Container>
+    </section>
+    <section className="new_drinks">
+      <Container>
         <Row>
           <Col lg='12' className='text-center'>
             <h2 className='section_title'> new Drinks for this season </h2>
@@ -111,7 +117,7 @@ const Home = () => {
           <Products data={NewDrinks} />
         </Row>
       </Container>
-     </section>
+    </section>
   </Logo>
   );
 }

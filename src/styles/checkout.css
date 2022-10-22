@@ -21,3 +21,12 @@
     border: 1px solid grey ;
     padding-top: 20px;
 }
+
+.auth_btn{
+    width: 50%;
+    height: 50px;
+}
+.title{
+    font-size: 30px;
+    justify-content: center;
+}

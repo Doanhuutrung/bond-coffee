@@ -10,43 +10,43 @@ import { Link } from 'react-router-dom';
 
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.cartItem);
+  const cartItems = useSelector((state) => state.cart.cartItems);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
 
-  return ( <Logo title='cart'>
+  return (<Logo title='cart'>
     <MenuDrink title='Drink Cart' />
     <section>
       <Container>
         <Row>
           <Col lg='12'>
-            {cartItems.length === 0 ?(
+            {cartItems.length === 0 ? (
               <h2 className='fs-4 text-center'> Oops! you have no drink in your cart </h2>
-              ) : (       
-            <table className='table bordered'>
-              <thead>
-                <tr>
-                  <th>Image</th>
-                  <th>Title</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Delete</th>
-                </tr>
-              </thead>
-              <tbody>
-                {
-                  cartItems.map((item,index) => (
-                    <Tr item ={item} key={index} />
-                  ))
-                }
-              </tbody>
-            </table>
+            ) : (
+              <table className='table bordered'>
+                <thead>
+                  <tr>
+                    <th>Image</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Delete</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {
+                    cartItems.map((item, index) => (
+                      <Tr item={item} key={index} />
+                    ))
+                  }
+                </tbody>
+              </table>
             )}
           </Col>
 
           <Col lg='8'>
             <div>
               <h6> Here is your bill </h6>
-              <span>{totalAmount}</span>
+              {/* <span> ${totalAmount} </span> */}
             </div>
             <div>
               <p className='fs-5 mt-6'> Bill will be free shipping within 5km or over $200 </p>
@@ -57,15 +57,16 @@ const Cart = () => {
             </div>
           </Col>
         </Row>
-      </Container>   
+      </Container>
     </section>
   </Logo>
   );
 };
 
-const Tr = ({item}) => {
+
+const Tr = ({ item }) => {
   const dispatch = useDispatch()
-  const deleteDrinks = () =>{ 
+  const deleteDrinks = () => {
     dispatch(cartActions.deleteItem(item.id))
 
   }
@@ -74,8 +75,8 @@ const Tr = ({item}) => {
     <td> {item.productName}</td>
     <td> {item.price}</td>
     <td> {item.quantity}</td>
-    <td> 
-      <motion.i whileTap={{scale: 1.2}} onClick={deleteDrinks} className="ri-delete-bin-7-line">
+    <td>
+      <motion.i whileTap={{ scale: 1.2 }} onClick={deleteDrinks} className="ri-delete-bin-7-line">
       </motion.i>
     </td>
   </tr>

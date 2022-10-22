@@ -5,7 +5,7 @@ import Drinks from '../assets/data/Drinks';
 import Logo from '../components/Logo/Logo'
 import MenuDrink from '../components/Product/MenuDrink';
 import '../styles/drink-details.css';
-import {motion} from 'framer-motion'
+import { motion } from 'framer-motion'
 import Products from '../components/Product/Products';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../redux/slices/cartSlice';
@@ -14,24 +14,24 @@ import { toast } from 'react-toastify';
 
 const DrinkDetail = () => {
 
-  const[view,setView] = useState('description');
-  const reviewbyUser= useRef('');
-  const reviewMessage = useRef ('');
-  const dispatch = useDispatch ();
-  const[rating,setRating] = useState(null);
-  const {id} = useParams();
+  const [view, setView] = useState('description');
+  const reviewbyUser = useRef('');
+  const reviewMessage = useRef('');
+  const dispatch = useDispatch();
+  const [rating, setRating] = useState(null);
+  const { id } = useParams();
   const drink = Drinks.find(item => item.id === id);
-  const {imgUrl, productName, price, review, description, avgRating, shortDesc,category } = drink;
+  const { imgUrl, productName, price, review, description, avgRating, shortDesc, category } = drink;
   const related = Drinks.filter((item) => item.category === category);
 
-  const submitHandler = (c) =>{
-    c.preventDefault()
+  const submitHandler = (a) => {
+    a.preventDefault()
     const reviewUserName = reviewbyUser.current.value;
     const reviewUserMessage = reviewMessage.current.value;
-    const objectReview ={
+    const objectReview = {
       userName: reviewUserName,
       text: reviewUserMessage,
-      rating,
+      rating:rating,
     };
     console.log(objectReview);
     toast.success('you just submitted 1 review to help us grow')
@@ -40,7 +40,7 @@ const DrinkDetail = () => {
   const addtoCart = () => {
     dispatch(cartActions.addItem({
       id,
-      image:imgUrl,
+      image: imgUrl,
       productName,
       price,
     })
@@ -50,7 +50,7 @@ const DrinkDetail = () => {
 
   return (
     <Logo title={productName}>
-    <MenuDrink title={productName}/>
+      <MenuDrink title={productName} />
       <section className='pt-1'>
         <Container>
           <Row>
@@ -72,10 +72,10 @@ const DrinkDetail = () => {
                 </div>
                 <div className='d-flex align-items-center gap-4'>
                   <span className='drink_price'>{price}</span>
-                  {/* <span> Category: {category.toUpperCase()}</span> */}  
-                </div>  
+                  {/* <span> Category: {category.toUpperCase()}</span> */}
+                </div>
                 <p className='drink_des'>{shortDesc}</p>
-                <motion.button whileTap={{scale:1.2}}  className='buy_btn' onClick={addtoCart}> Add to Cart DrinkDetail </motion.button>
+                <motion.button whileTap={{ scale: 1.2 }} className='buy_btn' onClick={addtoCart}> Add to Cart DrinkDetail </motion.button>
               </div>
             </Col>
           </Row>
@@ -86,60 +86,61 @@ const DrinkDetail = () => {
           <Row>
             <Col lg='15'>
               <div className='desc_wrapper gap-5'>
-                <h6 className={`${view==='description' ? 'active_desc': ''}`} onClick ={ () => setView('description')}>
+                <h6 className={`${view === 'description' ? 'active_desc' : ''}`} onClick={() => setView('description')}>
                   Description
                 </h6>
-                <h6 className={`${view==='review' ? 'active_desc:':''}`} onClick ={() => setView('review')}> 
+                <h6 className={`${view === 'review' ? 'active_desc:' : ''}`} onClick={() => setView('review')}>
                   Reviews ({review.length})</h6>
-                </div>
+              </div>
               {view === 'description' ? (<div className='desc_title mt-4'>
-                     <p> {description}</p>
-                    </div>
-                     ) : ( 
-              <div className='drink_review mt-4 '>
-                 <div className='review_wraper'>
-                  <ul>
-                    {
-                      review?.map((item, index) => (
-                      <li key={index} className='mb-5'>
-                        <h6> Le Anh Tuan </h6>
-                        <span> {item.rating} (rating) </span>
-                        <p>{item.text}</p>
-                      </li>
-                    ))}
-                  </ul>
-                  <div className='comment_form'>
-                    <h4> Drink experience </h4>
+                <p> {description}</p>
+              </div>
+              ) : (
+                <div className='drink_review mt-4 '>
+                  <div className='review_wraper'>
+                    <ul>
+                      {
+                        review?.map((item, index) => (
+                          <li key={index} className='mb-5'>
+                            <h6> Le Anh Tuan </h6>
+                            <span> {item.rating} (rating) </span>
+                            <p>{item.text}</p>
+                          </li>
+                        ))}
+                    </ul>
+                    <div className='comment_form'>
+                      <h4> Drink experience </h4>
                       <form action='' onSubmit={submitHandler}>
                         <div className='form_group'>
-                            <input type='text' placeholder='Enter your name' ref={reviewbyUser} />
+                          <input type='text' placeholder='Enter your name' ref={reviewbyUser} />
                         </div>
 
                         <div className='form_group gap-5 align-items-center '>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(1)}><i className="ri-star-fill"></i> </motion.span>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(2)}><i className="ri-star-fill"></i> </motion.span>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(3)}><i className="ri-star-fill"></i> </motion.span>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(4)}><i className="ri-star-fill"></i> </motion.span>
-                            <motion.span whileTap={{scale:1.2}} onClick={() => setRating(5)}><i className="ri-star-fill"></i> </motion.span>
+                          <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(1)}><i className="ri-star-fill"></i> </motion.span>
+                          <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(2)}><i className="ri-star-fill"></i> </motion.span>
+                          <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(3)}><i className="ri-star-fill"></i> </motion.span>
+                          <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(4)}><i className="ri-star-fill"></i> </motion.span>
+                          <motion.span whileTap={{ scale: 1.2 }} onClick={() => setRating(5)}><i className="ri-star-fill"></i> </motion.span>
                         </div>
                         <div className='form_group'>
-                            <textarea ref={reviewMessage} rows={10} type='text' placeholder='let me know how you feel about this drink ^^'/>
+                          <textarea ref={reviewMessage} rows={10} type='text' placeholder='let me know how you feel about this drink ^^' />
                         </div>
                         <button type='submit' className='buy_btn'> Submit </button>
                       </form>
+                    </div>
                   </div>
-                 </div>
-              </div>
+                </div>
               )}
             </Col>
             <Col lg='12'>
               <h2 className="relate_content"> Other water dishes you may like</h2>
             </Col>
-            <Products data={related}/>
+            <Products data={related} />
           </Row>
         </Container>
       </section>
-  </Logo>
-)};
+    </Logo>
+  )
+};
 
 export default DrinkDetail

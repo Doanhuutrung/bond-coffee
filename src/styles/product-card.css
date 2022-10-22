@@ -12,7 +12,7 @@
 
 .product_information h3 a{
     font-size: 2rem;
-    color: var(--primary-color);
+    color: black;
     font-weight: 600;
     margin-top: 15px;
 }
