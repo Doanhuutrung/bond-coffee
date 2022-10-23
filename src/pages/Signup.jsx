@@ -10,9 +10,9 @@ import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { setDoc, doc } from 'firebase/firestore';
 
 import { auth, storage } from '../firebase/firebase.config';
-import { async } from '@firebase/util';
 import { toast } from 'react-toastify';
 import { db } from '../firebase/firebase.config';
+import { useNavigate } from 'react-router-dom';
 
 
 const Signup = () => {
@@ -22,24 +22,26 @@ const Signup = () => {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
 
-  const signup = async (e) => {
+  const navigate = useNavigate()
+
+  const createAccount = async (e) => {
     e.preventDefault()
     setLoading(true)
     try {
 
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
       const storageRef = ref(storage, `images/${Date.now() + username}`);
       const uploadUser = uploadBytesResumable(storageRef, file);
-      const user = userCredential.user;
       uploadUser.on((error) => {
         toast.error(error.message)
-      }, () => {
-        getDownloadURL(uploadUser.snapshot.ref).then(async (downloadURL) => {
+      }, () => {  
+        getDownloadURL(uploadUser.snapshot.ref).then(async(downloadURL) => {  
           //update profile of user
          await updateProfile(user,{
             displayName: username,
             photoURL: downloadURL,
-          });
+          }); 
 
           //store user's data 
           await setDoc(doc(db,'users',user.uid),{
@@ -47,11 +49,14 @@ const Signup = () => {
             displayName: username,
             email,
             photoURL: downloadURL,
-          });
+          }); 
         });
       })
-      console.log(user)
+      setLoading(false)
+      toast.success('Account create');
+      navigate('/login')
     } catch (error) {
+      setLoading(false)
       toast.error('something went wrong !!!')
     }
   }
@@ -60,9 +65,11 @@ const Signup = () => {
       <section>
         <Container>
           <Row>
-            <Col lg='5' className='m-auto text-center'>
+            {
+              loading ? <Col lg='12' className='fw-bold'>
+                <h6>Loading.........</h6></Col> : <Col lg='5' className='m-auto text-center'>
               <h3 className='fw-bold fs-4'> Create an account </h3>
-              <Form className="auth_form" onSubmit={signup}>
+              <Form className="auth_form" onSubmit={createAccount}>
                 <FormGroup className='form_group'>
                   <input type='name' placeholder='Enter Username' value={username} onChange={e => setuserName(e.target.value)} />
                 </FormGroup>
@@ -78,10 +85,11 @@ const Signup = () => {
                 </FormGroup>
                 <button type='submit' className='login_btn auth_btn'>Create an account </button>
                 <p> Already have an account ? {''}
-                  <Link to='/Login'> Login </Link>
+                  <Link to='/Login'> Login </Link> 
                 </p>
               </Form>
             </Col>
+            }
           </Row>
         </Container>
       </section>
