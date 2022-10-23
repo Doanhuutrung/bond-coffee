@@ -3,20 +3,47 @@ import React, { useState } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import Logo from '../components/Logo/Logo';
 import { Form, FormGroup } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { auth } from '../firebase/firebase.config';
+import { toast } from 'react-toastify';
+import { async } from '@firebase/util';
+import { signInWithEmailAndPassword } from 'firebase/auth';
+
 
 const Login = () => {
   const [email,setEmail] = useState('email');
   const [password,setPassword] = useState('password');
+  const [loading,setLoading] = useState(false);
+
+  const navigate = useNavigate()
+
+  const signIn = async (e) =>{
+    e.preventDefault()
+    setLoading(true)
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth,email,password)
+      const user = userCredential.user;
+      console.log(user)
+      setLoading(false)
+      toast.success("welcome to TrungCoffee")
+      navigate('/Home')
+    } catch (error) {
+      setLoading(false)
+      toast.error(error.message)
+    }
+  }
 
   return (
       <Logo title='Login'>
           <section>
             <Container>
               <Row>
-                <Col lg='5' className='m-auto text-center'>
+                {
+                  loading ? <Col lg='12' className='text-center'> 
+                  <h5 className='fw-bold'> Wait a few minutes........</h5>
+                  </Col> : <Col lg='5' className='m-auto text-center'>
                   <h3 className='fw-bold fs-4'> Login </h3>
-                  <Form className="auth_form">
+                  <Form className="auth_form" onSubmit={signIn}>
                     <FormGroup className='form_group'>
                         <input type='email' placeholder='Enter your email' value={email} onChange={e => setEmail(e.target.value)} />
                     </FormGroup>
@@ -29,6 +56,7 @@ const Login = () => {
                     </p>
                   </Form>
                 </Col>
+                }
               </Row>
             </Container>
           </section>
