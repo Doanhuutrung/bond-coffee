@@ -40,7 +40,7 @@ const Checkout = () => {
                       <p> $20 </p>
                 </h6>
                 <h4> Total: <span>{totalAmount}</span> </h4>
-                <button className='auth_btn '>
+                <button className='auth_btn'>
                   confirm payment
                 </button>
               </div>

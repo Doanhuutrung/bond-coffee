@@ -94,11 +94,9 @@ const Home = () => {
               <p> this will be the day when bartenders can try their hand at their experience and learn more from their competitors. </p>
             </div>
             <Event />
-            <motion.button whileTap={{ scale: 1.2 }} className='join_btn'> 
-              {/* window.location.replace('https://docs.goog zle.com/forms/d/e/1FAIpQLSdCVDXbldn8obRqa6xkswBvRG6Zk3jT0Xd35YtMq0wbOHPk2g/viewform?usp=sf_link')
-              <Link to='/Join'> Join Now </Link> */}
+            <motion.button whileTap={{ scale: 1.2 }} className='join_btn'>
               <a href='https://docs.google.com/forms/d/e/1FAIpQLSdCVDXbldn8obRqa6xkswBvRG6Zk3jT0Xd35YtMq0wbOHPk2g/viewform?usp=sf_link' target='_blank' rel='noreferrer'>
-                  Join Now
+                Join Now
               </a>
             </motion.button>
           </Col>

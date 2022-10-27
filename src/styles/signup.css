@@ -1,0 +1,39 @@
+.create_btn{
+    width: 50%;
+    height: 60px;
+    background-color: whitesmoke;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    color: black;
+    display: inline-block;
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    transform: translateZ(0);
+    transition: .2s;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.file_upload{
+    height: 30px;
+    width: 80px;
+}
+
+.upload_rcm{
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+}

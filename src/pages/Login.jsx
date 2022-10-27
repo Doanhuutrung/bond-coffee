@@ -6,7 +6,6 @@ import { Form, FormGroup } from 'reactstrap';
 import { Link, useNavigate } from 'react-router-dom';
 import { auth } from '../firebase/firebase.config';
 import { toast } from 'react-toastify';
-import { async } from '@firebase/util';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 

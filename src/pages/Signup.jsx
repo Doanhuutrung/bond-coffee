@@ -1,4 +1,4 @@
-
+import '../styles/signup.css';
 import React, { useState } from 'react';
 import { Col, Container, Row } from 'reactstrap';
 import Logo from '../components/Logo/Logo';
@@ -79,11 +79,11 @@ const Signup = () => {
                 <FormGroup className='form_group'>
                   <input type='password' placeholder='Enter your password' value={password} onChange={e => setPassword(e.target.value)} />
                 </FormGroup>
-                <p> Please upload your profile picture </p>
-                <FormGroup className='form_group'>
+                <p className='upload_rcm'> Please upload your profile picture </p>
+                <FormGroup className='file_upload'>
                   <input type='file' onChange={e => setFile(e.target.files[0])} />
                 </FormGroup>
-                <button type='submit' className='login_btn auth_btn'>Create an account </button>
+                <button type='submit' className='create_btn'>Create an account </button>
                 <p> Already have an account ? {''}
                   <Link to='/Login'> Login </Link> 
                 </p>
