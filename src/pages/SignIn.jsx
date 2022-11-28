@@ -9,7 +9,7 @@ import { toast } from 'react-toastify';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
-const Login = () => {
+const SignIn = () => {
   const [email,setEmail] = useState('email');
   const [password,setPassword] = useState('password');
   const [loading,setLoading] = useState(false);
@@ -63,4 +63,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default SignIn

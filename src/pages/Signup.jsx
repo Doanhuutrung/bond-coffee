@@ -85,7 +85,7 @@ const Signup = () => {
                 </FormGroup>
                 <button type='submit' className='create_btn'>Create an account </button>
                 <p> Already have an account ? {''}
-                  <Link to='/Login'> Login </Link> 
+                  <Link to='/SignIn'> SignIn </Link> 
                 </p>
               </Form>
             </Col>

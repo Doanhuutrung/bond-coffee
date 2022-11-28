@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Row, Col} from 'reactstrap';
-import './services.css';
+import '../styles/services.css';
 import serviceData from '../assets/data/serviceData';
 
 const Services = () => {

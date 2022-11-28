@@ -48,6 +48,7 @@
 .timer_count{
     background: burlywood;
     height: 22rem;
+    padding: 50px;
 }
 
 .timer_count img{

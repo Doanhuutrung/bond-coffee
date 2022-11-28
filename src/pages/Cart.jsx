@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.cartItems);
-  // const totalAmount = useSelector((state) => state.cart.totalAmount);
+  const totalAmount = useSelector((state) => state.cart.totalAmount);
 
   return (<Logo title='cart'>
     <MenuDrink title='Drink Cart' />
@@ -46,7 +46,7 @@ const Cart = () => {
           <Col lg='8'>
             <div>
               <h6> Here is your bill </h6>
-              {/* <span> ${totalAmount} </span> */}
+              <span> ${totalAmount} </span>
             </div>
             <div>
               <p className='fs-5 mt-6'> Bill will be free shipping within 5km or over $200 </p>
