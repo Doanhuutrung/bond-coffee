@@ -71,13 +71,13 @@ const Signup = () => {
               <h3 className='fw-bold fs-4'> Create an account </h3>
               <Form className="auth_form" onSubmit={createAccount}>
                 <FormGroup className='form_group'>
-                  <input type='name' placeholder='Enter Username' value={username} onChange={e => setuserName(e.target.value)} />
+                  <input type='name' placeholder='Enter Username' value={username} onChange={e => setuserName(e.target.value)} required/>
                 </FormGroup>
                 <FormGroup className='form_group'>
-                  <input type='email' placeholder='Enter your email' value={email} onChange={e => setEmail(e.target.value)} />
+                  <input type='email' placeholder='Enter your email' value={email} onChange={e => setEmail(e.target.value)} required/>
                 </FormGroup>
                 <FormGroup className='form_group'>
-                  <input type='password' placeholder='Enter your password' value={password} onChange={e => setPassword(e.target.value)} />
+                  <input type='password' placeholder='Enter your password' value={password} onChange={e => setPassword(e.target.value)} required/>
                 </FormGroup>
                 <p className='upload_rcm'> Please upload your profile picture </p>
                 <FormGroup className='file_upload'>

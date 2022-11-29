@@ -44,10 +44,10 @@ const SignIn = () => {
                   <h3 className='fw-bold fs-4'> Login </h3>
                   <Form className="auth_form" onSubmit={signIn}>
                     <FormGroup className='form_group'>
-                        <input type='email' placeholder='Enter your email' value={email} onChange={e => setEmail(e.target.value)} />
+                        <input type='email' placeholder='Enter your email' value={email} onChange={e => setEmail(e.target.value)} required />
                     </FormGroup>
                     <FormGroup className='form_group'>
-                        <input type='password' placeholder='Enter your password' value={password} onChange={e => setPassword(e.target.value)}/>
+                        <input type='password' placeholder='Enter your password' value={password} onChange={e => setPassword(e.target.value)} required/>
                     </FormGroup>
                     <button type='submit' className='login_btn auth_btn'>Login</button>
                     <p>Don't have an account ? 
