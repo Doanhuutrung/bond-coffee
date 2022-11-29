@@ -1,12 +1,12 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import Auth from '../custom/Auth';
+import useAuth from '../custom/useAuth';
 import { Outlet } from 'react-router-dom';
 
 const ManageRouter = (children) => {
-    const {currentUser} = Auth()
+    const {currentUser} = useAuth()
 
-  return currentUser ? <Outlet/>  : <Navigate to="Login" />
+  return currentUser ? <Outlet/>  : <Navigate to="/SignIn" />
 }
 
 export default ManageRouter

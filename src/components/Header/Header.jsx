@@ -7,7 +7,7 @@ import logo from '../../assets/images/Logoshop.png';
 import user from '../../assets/images/avata.png';
 import { Container, Row } from 'reactstrap';
 import { useSelector } from 'react-redux';
-import useAuth from '../../custom/Auth';
+import useAuth from '../../custom/useAuth';
 import { Link } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.config';
@@ -53,9 +53,9 @@ const Header = () => {
   };
 
   const Logout = () => {
-    signOut(auth).then(()=>{
+    signOut(auth).then(() => {
       toast.success('Bye Bye ! hope to see you again !!')
-    }).catch(err =>{
+    }).catch(err => {
       toast.error(err.message)
     })
   }
@@ -108,19 +108,20 @@ const Header = () => {
               </span>
 
               <div className='profile' >
-                <motion.img 
-                whileTap={{ scale: 1.1 }} 
-                src={currentUser ? currentUser.photoURL : user} 
-                alt="" 
-                onClick={toogleProfile} />
+                <motion.img
+                  whileTap={{ scale: 1.1 }}
+                  src={currentUser ? currentUser.photoURL : user}
+                  alt=""
+                  onClick={toogleProfile} />
 
 
                 <div className="profile_actions" ref={profileACtionRef} onClick={toogleProfile}>
-                  { currentUser ? (<span onClick={Logout} > Log out </span>) : (
-                    <div> 
-                      <Link to ='/SignIn'> SignIn </Link>
-                      <Link to ='/SignUp'> SignUp </Link>
-                    </div> 
+                  {currentUser ? (<span onClick={Logout} > Log out </span>) : (
+                    <div>
+                      <Link to='/SignIn'> SignIn </Link>
+                      <Link to='/SignUp'> SignUp </Link>
+                      <Link to='/Dashboard'> Dashboard </Link>
+                    </div>
                   )}
                 </div>
               </div>

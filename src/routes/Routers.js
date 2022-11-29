@@ -8,10 +8,11 @@ import Signup from '../pages/Signup';
 import Checkout from '../pages/Checkout';
 import Cart from '../pages/Cart';
 import ManageRouter from './ManageRouter';
-import Main from '../pages/admin/Main';
 
-import NewDrink from '../pages/admin/NewDrink';
-import ManageDrink from '../pages/admin/ManageDrink';
+
+import AddDrink from '../admin/AddDrink';
+import ManageDrink from '../admin/ManageDrink';
+import Dashboard from '../admin/Dashboard';
 
 
 
@@ -19,11 +20,8 @@ const Routers = () => {
   return ( 
   <Routes>
     <Route path='Home' element={<Home/>} />
-    <Route path='Main' element={<Main/>} />
     <Route path='Shop' element={<Shop/>} />
     <Route path='Shop/:id' element={<Product/>} />
-    <Route path='SignIn' element={<SignIn/>} />
-    <Route path='Signup' element={<Signup/>} />
     <Route path='Cart' element={<Cart/>} />
 
 
@@ -31,9 +29,14 @@ const Routers = () => {
 
     <Route path='/*' element={<ManageRouter/>}>
         <Route path = 'Checkout' element ={<Checkout/>} />
+        <Route path = 'Dashboard' element ={<Dashboard/>} />
         <Route path = 'Dashboard/Manage-Drink' element ={<ManageDrink/>} />
-        <Route path = 'Dashboard/Add-Drink' element={<NewDrink/>} />
+        <Route path = 'Dashboard/Add-Drink' element={<AddDrink/>} />
     </Route>
+
+
+    <Route path='SignIn' element={<SignIn/>} />
+    <Route path='Signup' element={<Signup/>} />
 
     {/* <Route path='Checkout' 
     element={

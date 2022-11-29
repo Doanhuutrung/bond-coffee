@@ -16,7 +16,6 @@
 
 /* reset browser default */
 * {
-  padding: 0;
   box-sizing: border-box;
 }
 
@@ -61,5 +60,5 @@ img{
 }
 
 section{
-  padding: 120px 0px;
+  padding: 60px 0px;
 }
