@@ -1,0 +1,29 @@
+.revenuie-box , .order-box, .product-box, .user-box{
+    padding: 30px;
+    border-radius: 5px;
+}
+
+.revenuie-box{
+    background:  #FFEDDB;
+}
+.order-box{
+    background: #F7ECDE;
+}
+.product-box{
+    background: #D67D3E;
+}
+.user-box{
+    background: #BF9270;
+}
+
+.revenuie-box h5 , .order-box h5, .product-box h5, .user-box h5{
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color : black;
+}
+
+.revenuie-box span , .order-box span, .product-box span, .user-box span{
+    font-weight: 500;
+    font-size: 2rem;
+}
