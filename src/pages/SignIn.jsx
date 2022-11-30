@@ -25,7 +25,7 @@ const SignIn = () => {
       console.log(user)
       setLoading(false)
       toast.success("welcome to TrungCoffee")
-      navigate('/Home')
+      navigate('/Checkout')
     } catch (error) {
       setLoading(false)
       toast.error(error.message)

@@ -37,7 +37,7 @@ const DrinkDetail = () => {
     }
     getDrink();
   },[docRef])
-  const { imgUrl, productName, price, review, description, avgRating, shortDesc, category } = drink;
+  const { imgUrl, productName, price, description, avgRating, shortDesc, category } = drink;
   const related = drinks.filter((item) => item.category === category);
 
   const submitHandler = (a) => {
@@ -106,7 +106,7 @@ const DrinkDetail = () => {
                   Description
                 </h6>
                 <h6 className={`${view === 'review' ? 'active_desc:' : ''}`} onClick={() => setView('review')}>
-                  Reviews ({review.length})</h6>
+                  Reviews</h6>
               </div>
               {view === 'description' ? (<div className='desc_title mt-4'>
                 <p> {description}</p>
@@ -114,7 +114,7 @@ const DrinkDetail = () => {
               ) : (
                 <div className='drink_review mt-4 '>
                   <div className='review_wraper'>
-                    <ul>
+                    {/* <ul>
                       {
                         review?.map((item, index) => (
                           <li key={index} className='mb-5'>
@@ -123,7 +123,7 @@ const DrinkDetail = () => {
                             <p>{item.text}</p>
                           </li>
                         ))}
-                    </ul>
+                    </ul> */}
                     <div className='comment_form'>
                       <h4> Drink experience </h4>
                       <form action='' onSubmit={submitHandler}>

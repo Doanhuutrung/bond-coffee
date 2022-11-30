@@ -9,4 +9,4 @@ const ManageRouter = (children) => {
   return currentUser ? <Outlet/>  : <Navigate to="/SignIn" />
 }
 
-export default ManageRouter
+export default ManageRouter;
