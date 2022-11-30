@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import { useParams } from 'react-router-dom';
 import { Col, Container, Row } from 'reactstrap';
-import Drinks from '../assets/data/Drinks';
 import Logo from '../components/Logo/Logo'
 import MenuDrink from '../components/Product/MenuDrink';
 import '../styles/drink-details.css';
@@ -10,19 +9,36 @@ import Products from '../components/Product/Products';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../redux/slices/cartSlice';
 import { toast } from 'react-toastify';
+import { db } from '../firebase/firebase.config';
+import {doc, getDoc} from 'firebase/firestore';
+import { useEffect } from 'react';
+import useGetData from '../custom/useGetData';
 
 
 const DrinkDetail = () => {
-
+  const [drink,setDrink] = useState({})
   const [view, setView] = useState('description');
   const reviewbyUser = useRef('');
   const reviewMessage = useRef('');
   const dispatch = useDispatch();
   const [rating, setRating] = useState(null);
   const { id } = useParams();
-  const drink = Drinks.find(item => item.id === id);
+  const {data: drinks} = useGetData('drinks');
+  // const drink = Drinks.find(item => item.id === id);
+  const docRef = doc(db,'drinks',id);
+  useEffect(() => {
+    const getDrink = async() => {
+      const docSnap = await getDoc(docRef);
+      if(docSnap.exists()){
+        setDrink(docSnap.data())
+      }else{
+        console.log('no product is found !!!')
+      }
+    }
+    getDrink();
+  },[docRef])
   const { imgUrl, productName, price, review, description, avgRating, shortDesc, category } = drink;
-  const related = Drinks.filter((item) => item.category === category);
+  const related = drinks.filter((item) => item.category === category);
 
   const submitHandler = (a) => {
     a.preventDefault()

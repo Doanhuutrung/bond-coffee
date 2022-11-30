@@ -7,11 +7,13 @@ import specialty from '../assets/images/specialty.png';
 import '../styles/home.css';
 import Services from '../services/Services';
 import Products from '../components/Product/Products';
-import Drinks from '../assets/data/Drinks';
 import Barista from '../assets/images/barista.png';
 import Event from '../components/Product/Event';
 
+import useGetData from '../custom/useGetData';
+
 const Home = () => {
+  const {data: drinks, loading} =useGetData ('drinks');
 
   const [SignatureDrink, setSignatureDrink] = useState([]);
   const [BestSalesDrink, setBestSalesDrink] = useState([]);
@@ -19,19 +21,19 @@ const Home = () => {
   const year = new Date().getFullYear();
 
   useEffect(() => {
-    const filteredSignatureDrinks = Drinks.filter(
+    const filteredSignatureDrinks = drinks.filter(
       (item) => item.category === 'Coffee');
 
-    const filteredBestSalesDrinks = Drinks.filter(
+    const filteredBestSalesDrinks = drinks.filter(
       (item) => item.category === 'Tea');
 
-    const filteredNewDrinks = Drinks.filter(
+    const filteredNewDrinks = drinks.filter(
       (item) => item.category === 'Smoothie');
 
     setSignatureDrink(filteredSignatureDrinks);
     setBestSalesDrink(filteredBestSalesDrinks);
     setNewDrinks(filteredNewDrinks);
-  }, []);
+  }, [drinks]);
   return (<Logo title={'Home'}>
     <section className="home_section">
       <Container>
@@ -68,7 +70,11 @@ const Home = () => {
           <Col lg='12' className='text-center'>
             <h2 className='product_title'> Signature Drink </h2>
           </Col>
-          <Products data={SignatureDrink} />
+          {
+            loading ? <h5 className='fw-bold'> Loading..................</h5> :
+            <Products data={SignatureDrink} />
+          }
+
         </Row>
       </Container>
     </section>
@@ -78,7 +84,9 @@ const Home = () => {
           <Col lg='12' className='text-center'>
             <h2 className='section_title'> Best Sales </h2>
           </Col>
-          <Products data={BestSalesDrink} />
+          {
+            loading ? <h5 className='fw-bold'> Loading..................</h5> : <Products data={BestSalesDrink} />
+          }
         </Row>
       </Container>
     </section>
@@ -112,7 +120,9 @@ const Home = () => {
           <Col lg='12' className='text-center'>
             <h2 className='section_title'> new Drinks for this season </h2>
           </Col>
-          <Products data={NewDrinks} />
+          {
+            loading ? <h5 className='fw-bold'> Loading..................</h5> : <Products data={NewDrinks} />
+          }
         </Row>
       </Container>
     </section>

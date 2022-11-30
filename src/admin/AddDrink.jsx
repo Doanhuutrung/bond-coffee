@@ -41,7 +41,7 @@ const AddDrink = () => {
       }, () =>{
         getDownloadURL(uploadTask.snapshot.ref).then(async(downloadURL) => {
           await addDoc(docRef, {
-            title: enterTitle,
+            drinkName: enterTitle,
             description: enterDescription,
             category : enterCategory,
             price: enterPrice,
@@ -71,7 +71,7 @@ const AddDrink = () => {
               <h4> Add new Drink </h4>
             <Form onSubmit={addDrink}>
               <FormGroup className='form-group'>
-                <span>Product title:</span>
+                <span>Drink name:</span>
                 <input type='text' placeholder='' value={enterTitle} onChange={e => setEnterTitle(e.target.value)} required/>
               </FormGroup>
               <FormGroup className='form-group'>
@@ -86,6 +86,7 @@ const AddDrink = () => {
               <FormGroup className='form-group'>
                 <span>Category:</span>
                 <select className='w-100 p-2' value={enterCategory} onChange={e => setEnterCategory(e.target.value)}>
+                  <option> Choose Category </option>
                   <option value='Coffee'> Coffee </option>
                   <option value='Tea'> Tea </option>
                   <option value='Smoothie'> Smoothie </option>
