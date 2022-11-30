@@ -13,6 +13,7 @@ import ManageRouter from './ManageRouter';
 import AddDrink from '../admin/AddDrink';
 import ManageDrink from '../admin/ManageDrink';
 import Dashboard from '../admin/Dashboard';
+import Users from '../admin/Users';
 
 
 
@@ -32,6 +33,7 @@ const Routers = () => {
         <Route path = 'Dashboard' element ={<Dashboard/>} />
         <Route path = 'Dashboard/Manage-Drink' element ={<ManageDrink/>} />
         <Route path = 'Dashboard/Add-Drink' element={<AddDrink/>} />
+        <Route path = 'Dashboard/Users' element={<Users/>} />
     </Route>
 
 
