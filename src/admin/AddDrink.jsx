@@ -24,14 +24,14 @@ const AddDrink = () => {
   const addDrink = async(e) => {
     e.preventDefault();
     setLoading(true);
-    // const Drink = {
-    //   title: enterTitle,
-    //   description: enterDescription,
-    //   category : enterCategory,
-    //   price: enterPrice,
-    //   imgURL: enterDrinkImg
-    // };
-    //add Drink data to the Firebase
+      // const Drink = {
+      //   title: enterTitle,
+      //   description: enterDescription,
+      //   category : enterCategory,
+      //   price: enterPrice,
+      //   imgURL: enterDrinkImg
+      // };
+      //add Drink data to the Firebase
     try {
       const docRef = await collection(db,'drinks')
       const storageRef = ref(storage, `drinkImages/${Date.now() + enterDrinkImg.name}`)
@@ -41,7 +41,7 @@ const AddDrink = () => {
       }, () =>{
         getDownloadURL(uploadTask.snapshot.ref).then(async(downloadURL) => {
           await addDoc(docRef, {
-            drink: enterTitle,
+            title: enterTitle,
             description: enterDescription,
             category : enterCategory,
             price: enterPrice,
@@ -101,8 +101,7 @@ const AddDrink = () => {
         <button className="buy_btn" type='submit'> Add new Drink </button>
             </Form>
                 </>
-              )
-            }
+            )}
           </Col>
         </Row>
       </Container>
@@ -110,4 +109,4 @@ const AddDrink = () => {
   )
 }
 
-export default AddDrink
+export default AddDrink;
