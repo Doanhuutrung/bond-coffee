@@ -20,10 +20,6 @@ const admin_nav = [
         path:'/Dashboard/Manage-Drink'
     },
     {
-        display:'Orders',
-        path:'/Dashboard/Bill'
-    },
-    {
         display:'Users',
         path:'/Dashboard/Users'
     },

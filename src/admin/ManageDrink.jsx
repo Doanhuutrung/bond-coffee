@@ -11,7 +11,7 @@ const ManageDrink = () => {
   const {data:productsData, loading} = useGetData('drinks'); 
   const deleteDrink = async(id) => {
     await deleteDoc(doc(db,'drinks', id));
-    toast.success('Deleted !');
+    toast.success('Deleted !!!');
   };
   return (
     <section>
@@ -22,7 +22,6 @@ const ManageDrink = () => {
               <thead>
                 <tr>
                   <th>Image</th>
-                  <th>Title</th>
                   <th>Category</th>
                   <th>Price</th>
                   <th>Action</th>
@@ -34,7 +33,6 @@ const ManageDrink = () => {
                   (productsData.map(item => (
                       <tr key={item.id}>
                       <td> <img src={item.imgURL} alt="" /></td>
-                      <td>{item.title} </td>
                       <td>{item.category}</td>
                       <td>{item.price}</td>
                       <td><button onClick={() => {deleteDrink(item.id)}} className='btn btn-danger'> Delete </button></td>

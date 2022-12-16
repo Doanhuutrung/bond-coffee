@@ -1,100 +1,97 @@
-.drink_detail{
-    margin-top: 40px;
+.drink__details{
+    margin-top: 10px;
 }
-.drink_detail h2{
-    font-size: 1.3rem;
-    margin-bottom: 10px;
+
+.drink__details h2{
+    font-size: 1.8rem;
 }
 
 .drink_rating{
     display: flex;
     align-items: center;
-    margin-bottom: 4px;
+    gap: 1rem;
+    margin-bottom: 1.4rem;
 }
+
 .drink_rating span i{
-    color: chocolate;
+    color: orangered;
 }
+
 .drink_rating p span{
+    color: orangered;
     font-weight: 500;
 }
+
 .drink_price{
-    font-size: 1.2rem;
     font-weight: 500;
+    font-size: 1.3rem;
 }
-.drink_des{
-    margin-top: 3px;
+
+.drink_desc{
+    margin-top: 2rem;
 }
-.desc_wrapper {
+
+.tab_wrapper{
     display: flex;
     align-items: center;
-}
-.desc_wrapper h6{
-    display: flex;
-    align-items: center;
+    gap: 1rem;
+    color: var(--primary-color);
+    font-weight: 500;
     font-size: 1rem;
-    font-weight: 300;
     cursor: pointer;
 }
-.active_desc{
-    font-weight: 400;
+
+.tab_wrapper h6{
+    cursor: pointer;
 }
 
-.review_title p{
-    line-height: 40px;
+.tab_content{
+    margin-top: 40px;
 }
 
-.review_wraper ul li span{
-    color:darkred;
+.drink_review{
+    margin-top: 40px;
+}
+
+.active_tab{
     font-weight: 600;
 }
 
-.review_wraper ul li p{
-    margin-top: 10px;
-}
-
-.relate_content{
-    font-weight: 600;
-    height: 60px;
-}
-
-.comment_form{
-    width: 70%;
-    margin: auto;
-    margin-top: 50px;
-}
-
-.comment_form h4{
-    font-size: 1.2rem;
-    font-weight: 500;
-    margin-top: 30px;
-}
-
-.form_group{
-    margin-bottom: 20px;
-}
-.form_group input:focus, .form_group textarea:focus{
-    outline: none;
-}
-.form_group input, .form_group textarea{
+.form_group input, .form_group textarea {
     width: 100%;
     border: 1px solid var(--primary-color);
     border-radius: 5px;
     padding: 8px 20px;
 }
 
+.form_group input:focus,
+.form_group textarea:focus{
+    outline: none;
+}
+.form_group{
+    margin-bottom: 30px;
+}
 .form_group span{
-    /* display: flex; */
+    display: flex;
     align-items: center;
     column-gap: 5px;
-    font-weight: 400;
-    cursor: pointer;
+    color: chocolate;
+
+}
+.review_form{
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
 }
 
-.product_image img{
-    width: 250px;
-    align-items: center;
+.review_form h4{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
 
-.product_item{
-    align-items: center;
+.relate_content{
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 30px;
 }

@@ -1,14 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Col, Container, Row, Form, FormGroup } from 'reactstrap';
 import Logo from '../components/Logo/Logo';
 import MenuDrink from '../components/Product/MenuDrink';
 import '../styles/checkout.css';
+  import {toast} from 'react-toastify';
 
 
-const Checkout = () => {
-  const totalQuantity = useSelector((state) => state.cart.totalQuantity)
-  const totalAmount = useSelector((state) => state.cart.totalAmount)
+  const Checkout = () => {
+    const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+    const totalAmount = useSelector((state) => state.cart.totalAmount);
+    const Checkout = () => {
+    toast.success("Thank you for your ordering !!")
+  }
   return (
     <Logo title='Checkout'>
       <MenuDrink title="Checkout"/>
@@ -40,8 +45,7 @@ const Checkout = () => {
                       <p> $20 </p>
                 </h6>
                 <h4> Total: <span>{totalAmount}</span> </h4>
-                <button className='auth_btn'>
-                  confirm payment
+                <button className='auth_btn' onClick={Checkout}> <Link to='/Home'> Confirm payment </Link>
                 </button>
               </div>
             </Col>

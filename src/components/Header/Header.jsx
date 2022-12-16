@@ -28,10 +28,6 @@ const nav__link = [
     path: 'Cart',
     display: 'Cart'
   },
-  {
-    path: 'SignIn',
-    display: 'SignIn'
-  }
 ]
 
 const Header = () => {
@@ -118,9 +114,8 @@ const Header = () => {
                 <div className="profile_actions" ref={profileACtionRef} onClick={toogleProfile}>
                   {currentUser ? (<span onClick={Logout} > Log out </span>) : (
                     <div>
-                      <Link to='/SignIn'> SignIn </Link>
-                      <Link to='/SignUp'> SignUp </Link>
                       <Link to='/Dashboard'> Dashboard </Link>
+                      <Link to='/Login'> Login </Link>
                     </div>
                   )}
                 </div>

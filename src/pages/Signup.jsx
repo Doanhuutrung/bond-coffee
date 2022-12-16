@@ -15,6 +15,8 @@ import { db } from '../firebase/firebase.config';
 import { useNavigate } from 'react-router-dom';
 
 
+
+
 const Signup = () => {
   const [email, setEmail] = useState('email');
   const [username, setuserName] = useState('username');

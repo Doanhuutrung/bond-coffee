@@ -46,10 +46,10 @@ const Cart = () => {
           <Col lg='8'>
             <div>
               <h6> Here is your bill </h6>
-              <span> ${totalAmount} </span>
+              <span> {totalAmount} vnd </span>
             </div>
             <div>
-              <p className='fs-5 mt-6'> Bill will be free shipping within 5km or over $200 </p>
+              <p className='fs-5 mt-6'> Bill will be free shipping within 5km or over 200000 vnd </p>
               <button className='buy_btn'><Link to='/Shop'> Let get more Drink !
               </Link></button>
               <button className='buy_btn'><Link to='/Checkout'> Checkout

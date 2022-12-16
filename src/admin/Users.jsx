@@ -5,6 +5,7 @@ import useGetData from '../custom/useGetData';
 import {deleteDoc   , doc} from 'firebase/firestore';
 import {db} from '../firebase/firebase.config';
 import {toast} from 'react-toastify'; 
+import "../styles/Adminpage.css";
 
 const Users = () => {
     

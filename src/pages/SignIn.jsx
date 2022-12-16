@@ -9,10 +9,12 @@ import { toast } from 'react-toastify';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
+
 const SignIn = () => {
   const [email,setEmail] = useState('email');
   const [password,setPassword] = useState('password');
   const [loading,setLoading] = useState(false);
+
 
   const navigate = useNavigate()
 
@@ -31,6 +33,7 @@ const SignIn = () => {
       toast.error(error.message)
     }
   }
+
 
   return (
       <Logo title='Login'>

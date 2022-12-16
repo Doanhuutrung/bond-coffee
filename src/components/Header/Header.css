@@ -95,7 +95,6 @@
     width: 150px;
     z-index: 10;
     padding: 20px;
-    display: flex;
     align-self: center;
     flex-direction: column;
     background: #EF9A53;

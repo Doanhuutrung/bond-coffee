@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { toast } from "react-toastify";
 
 const items = JSON.parse(localStorage.getItem("cartItems") || "[]");
 const totalAmount =
@@ -73,6 +74,7 @@ const cartSlice = createSlice({
         state.totalAmount,
         state.totalQuantity
       );
+      toast.success('Delete drinks successfully !!!');
     },
   },
 });
