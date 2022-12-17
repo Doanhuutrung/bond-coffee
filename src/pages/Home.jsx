@@ -68,7 +68,7 @@ const Home = () => {
       <Container>
         <Row>
           <Col lg='12' className='text-center'>
-            <h2 className='product_title'> Signature Drink </h2>
+            <h2 className='product_title'> New Drinks for this season </h2>
           </Col>
           {
             loading ? <h5 className='fw-bold'> Loading..................</h5> :
@@ -118,7 +118,7 @@ const Home = () => {
       <Container>
         <Row>
           <Col lg='12' className='text-center'>
-            <h2 className='section_title'> new Drinks for this season </h2>
+            <h2 className='section_title'> Signature Drink </h2>
           </Col>
           {
             loading ? <h5 className='fw-bold'> Loading..................</h5> : <Products data={NewDrinks} />

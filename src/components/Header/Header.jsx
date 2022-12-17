@@ -67,7 +67,7 @@ const Header = () => {
     navigate('/Cart');
   }
 
-  const toogleProfile = () => profileACtionRef.current.classList.toggle('show__profile_actions')
+  const toogleProfile = () => profileACtionRef.current.classList.toggle('show__profile_actions');
 
   return (
     <header className='header' ref={headerRef}>
@@ -94,10 +94,10 @@ const Header = () => {
             </div>
 
             <div className="nav_icons">
-              <span className='fav__icon'>
+              {/* <span className='fav__icon'>
                 <i className="ri-star-line"></i>
                 <span className='badge'>1</span>
-              </span>
+              </span> */}
               <span className='cart__icon' onClick={navigateToCart}>
                 <i className="ri-cup-line"></i>
                 <span className='badge'>{totalQuantity}</span>
@@ -114,7 +114,7 @@ const Header = () => {
                 <div className="profile_actions" ref={profileACtionRef} onClick={toogleProfile}>
                   {currentUser ? (<span onClick={Logout} > Log out </span>) : (
                     <div>
-                      <Link to='/Dashboard'> Dashboard </Link>
+                      {/* <Link to='/Dashboard'> Dashboard </Link> */}
                       <Link to='/Login'> Login </Link>
                     </div>
                   )}
@@ -128,4 +128,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header;

@@ -12,7 +12,7 @@ const serviceData = [
     {
         icon: 'ri-service-line',
         title: 'service',
-        subtitle:'Contact us if you need any information',
+        subtitle:'Contact us to get more ',
     },
 ];
 
