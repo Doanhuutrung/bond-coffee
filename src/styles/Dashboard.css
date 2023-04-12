@@ -1,29 +1,38 @@
-.revenuie-box , .order-box, .product-box, .user-box{
-    padding: 30px;
-    border-radius: 5px;
+.revenuie-box,
+.order-box,
+.product-box,
+.user-box {
+  padding: 30px;
+  border-radius: 5px;
 }
 
-.revenuie-box{
-    background:  #FFEDDB;
+.revenuie-box {
+  background: #ffeddb;
 }
-.order-box{
-    background: #F7ECDE;
+.order-box {
+  background: #f7ecde;
 }
-.product-box{
-    background: #D67D3E;
+.product-box {
+  background: #d67d3e;
 }
-.user-box{
-    background: #BF9270;
-}
-
-.revenuie-box h5 , .order-box h5, .product-box h5, .user-box h5{
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color : black;
+.user-box {
+  background: #bf9270;
 }
 
-.revenuie-box span , .order-box span, .product-box span, .user-box span{
-    font-weight: 500;
-    font-size: 2rem;
+.revenuie-box h5,
+.order-box h5,
+.product-box h5,
+.user-box h5 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.revenuie-box span,
+.order-box span,
+.product-box span,
+.user-box span {
+  font-weight: 500;
+  font-size: 2rem;
 }

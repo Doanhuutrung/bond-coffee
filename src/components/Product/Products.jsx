@@ -1,7 +1,7 @@
-import React from 'react';
-import ProductCard from './ProductCard';
+import React from "react";
+import ProductCard from "./ProductCard";
 
-const Products = ({data}) => {
+const Products = ({ data }) => {
   return (
     <>
       {data.map((item, index) => (
