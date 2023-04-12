@@ -1,16 +1,17 @@
-.table tr td img{
-    width: 30px !important;
-    height: 40px !important;
-    object-fit: cover;
+.table tr td img {
+  width: 30px !important;
+  height: 40px !important;
+  object-fit: cover;
 }
 
-td span{
-    cursor: pointer;
+td span {
+  cursor: pointer;
 }
 
-td,th{
-    color: brown;
+td,
+th {
+  color: brown;
 }
-.buy_btn{
-    font-size: 1.2rem;
+.buy_btn {
+  font-size: 1.2rem;
 }

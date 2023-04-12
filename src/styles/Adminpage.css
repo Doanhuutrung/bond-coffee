@@ -1,85 +1,85 @@
-.header-admin{
-    width: 100%;
-    padding: 20px 0px;
-    background: #F8EDE3;
+.header-admin {
+  width: 100%;
+  padding: 20px 0px;
+  background: #f8ede3;
 }
 
-.admin-nav-top{
-    width: 100%;
-    /* height: 100px;
+.admin-nav-top {
+  width: 100%;
+  /* height: 100px;
     line-height: 100px; */
 }
 
-.admin-nav-wrapper-top{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    column-gap: 3rem;
+.admin-nav-wrapper-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 3rem;
 }
 
-.admin-nav-top-right img{
-    width: 40px;
-    height: 40px;
-    border-radius: 50px;
-    cursor: pointer;
+.admin-nav-top-right img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  cursor: pointer;
 }
 
-.admin-nav-top-right{
-    display: flex;
-    align-items: center;
-    column-gap: 2rem;
+.admin-nav-top-right {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
 }
-.admin-nav-wrapper-top .search-box{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.admin-nav-top-right span i{
-    color: #5F6F94;
-    cursor: pointer;
+.admin-nav-wrapper-top .search-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.admin-nav-wrapper-top .logo{
-    font-size: 1.2rem;
-    color: #5F6F94;
+.admin-nav-top-right span i {
+  color: #5f6f94;
+  cursor: pointer;
 }
 
-.admin-menu{
-    width: 100%;
-    height: 70px;
-    line-height: 60px;
-    background: #D0B8A8;
+.admin-nav-wrapper-top .logo {
+  font-size: 1.2rem;
+  color: #5f6f94;
 }
 
-.admin-navigation{
-    text-align: center;
+.admin-menu {
+  width: 100%;
+  height: 70px;
+  line-height: 60px;
+  background: #d0b8a8;
 }
 
-.admin-menu-list{
-    display: flex;
-    align-items: center;
-    column-gap: 2.2rem;
-    justify-content: center;
+.admin-navigation {
+  text-align: center;
 }
 
-.admin-menu-list .admin-menu-item a{
-    color: #5F6F94;
-    font-weight: 500;
-    background: #F8EDE3;
-    padding: 7px 10px;
-    border-radius: 5px;
+.admin-menu-list {
+  display: flex;
+  align-items: center;
+  column-gap: 2.2rem;
+  justify-content: center;
 }
 
-.active_admin-menu{
-    background: #F8EDE3;
+.admin-menu-list .admin-menu-item a {
+  color: #5f6f94;
+  font-weight: 500;
+  background: #f8ede3;
+  padding: 7px 10px;
+  border-radius: 5px;
 }
 
-.imgUser{
-    width: 100px;
-    height: 50px;
+.active_admin-menu {
+  background: #f8ede3;
 }
 
-.img_pic{
-    width: 50%;
+.imgUser {
+  width: 100px;
+  height: 50px;
+}
+
+.img_pic {
+  width: 50%;
 }
