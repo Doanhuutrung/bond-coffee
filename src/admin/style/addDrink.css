@@ -1,0 +1,21 @@
+h2{
+    text-align: center;
+    font-weight: 600;
+    font-size: 40px;
+
+
+}
+.form-group{
+    font-size: 20px;
+    margin-top: 10px;
+}
+.form-group span{
+    margin-right: 20px;
+}
+
+.left-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
