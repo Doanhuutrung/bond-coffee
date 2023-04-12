@@ -35,10 +35,10 @@
   justify-content: space-between;
   margin-right: 10px;
 }
-
 .admin-nav-wrapper-top .search-box span {
   margin-left: 20px;
 }
+
 
 .admin-nav-top-right span i {
   color: #5f6f94;
@@ -52,8 +52,8 @@
 
 .admin-menu {
   width: 100%;
-  height: 50px;
-  line-height: 20px;
+  height: 70px;
+  line-height: 60px;
   background: #d0b8a8;
 }
 
@@ -78,4 +78,13 @@
 
 .active_admin-menu {
   background: #f8ede3;
+}
+
+.imgUser {
+  width: 100px;
+  height: 50px;
+}
+
+.img_pic {
+  width: 50%;
 }
