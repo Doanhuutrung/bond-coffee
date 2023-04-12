@@ -7,6 +7,7 @@ import {db, storage} from '../firebase/firebase.config';
 import { ref, uploadBytesResumable, getDownloadURL} from 'firebase/storage';
 import { collection, addDoc } from 'firebase/firestore';
 import { useNavigate } from 'react-router-dom';
+import '../admin/style/addDrink.css';
 
 
 
@@ -63,13 +64,13 @@ const AddDrink = () => {
   return (
     <section>
       <Container>
-        <Row>
+        <Row className='tittle'>
           <Col lg='12'>
             {
               loading ? (<h4> Loading...........</h4>) : (
                 <>
-              <h4> Add new Drink </h4>
-            <Form onSubmit={addDrink}>
+              <h2> Add new Drink </h2>
+            <Form onSubmit={addDrink} className='form-add-drink'>
               <FormGroup className='form-group'>
                 <span>Drink name:</span>
                 <input type='text' placeholder='' value={enterTitle} onChange={e => setEnterTitle(e.target.value)} required/>
@@ -78,27 +79,23 @@ const AddDrink = () => {
                 <span>Description:</span>
                 <input type='text' placeholder='' value={enterDescription} onChange={e => setEnterDescription(e.target.value)} required/>
               </FormGroup>
-        <div className='d-flex align-items-center justify-content-between'>
-              <FormGroup className='form-group w-100'>
+              <FormGroup className='form-group'>
                 <span>Price:</span>
                 <input type='text' placeholder='100.000vnd' value={enterPrice} onChange={e => setEnterPrice(e.target.value)} required/>
               </FormGroup>
               <FormGroup className='form-group'>
                 <span>Category:</span>
-                <select className='w-100 p-2' value={enterCategory} onChange={e => setEnterCategory(e.target.value)}>
+                <select className='w-10 p-2' value={enterCategory} onChange={e => setEnterCategory(e.target.value)}>
                   <option> Choose Category </option>
                   <option value='Coffee'> Coffee </option>
                   <option value='Tea'> Tea </option>
                   <option value='Smoothie'> Smoothie </option>
                 </select>
               </FormGroup>
-        </div>
-        <div>
               <FormGroup className='form-group'>
                 <span>Image:</span>
                 <input type='file' onChange={e=> setEnterDrinkImg(e.target.files[0])} required/>
               </FormGroup>
-        </div>
         <button className="buy_btn" type='submit'> Add new Drink </button>
             </Form>
                 </>

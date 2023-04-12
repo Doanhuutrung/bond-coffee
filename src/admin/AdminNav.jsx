@@ -4,6 +4,7 @@ import useAuth from "../custom/useAuth";
 import { Container, Row } from 'reactstrap';
 import '../styles/Adminpage.css';
 import { NavLink } from 'react-router-dom';
+import '../assets/images/Logoshop.png'
 
 
 const admin_nav = [
@@ -35,8 +36,8 @@ const AdminNav = () => {
         <div className="admin-nav-top">
             <Container>
                 <div className='admin-nav-wrapper-top'>
-                    <div className="logo">
-                        <h2>TrungCoffee</h2>
+                    <div className="banner">
+                        <h2> Admin </h2>
                     </div>
                     <div className="search-box">
                         <input type='text' placeholder='search..........'/>
