@@ -47,7 +47,8 @@ const cartSlice = createSlice({
           Number(exsitingItem.totalPrice) + Number(newItem.price);
       }
       state.totalAmount = state.cartItems.reduce(
-        (total, item) => total + Number(item.price) * Number(item.quantity),0
+        (total, item) => total + Number(item.price) * Number(item.quantity),
+        0
       );
       setItem(
         state.cartItems.map((item) => item),
@@ -66,15 +67,16 @@ const cartSlice = createSlice({
         state.cartItems = state.cartItems.filter((item) => item.id !== id);
         state.totalQuantity = state.totalQuantity - exsitingItem.quantity;
       }
-        state.totalAmount = state.cartItems.reduce(
-        (total, item) => total + Number(item.price) * Number(item.quantity),0
+      state.totalAmount = state.cartItems.reduce(
+        (total, item) => total + Number(item.price) * Number(item.quantity),
+        0
       );
       setItem(
         state.cartItems.map((item) => item),
         state.totalAmount,
         state.totalQuantity
       );
-      toast.success('Delete drinks successfully !!!');
+      toast.success("Delete drinks successfully !!!");
     },
   },
 });
