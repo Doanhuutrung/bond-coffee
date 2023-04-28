@@ -1,18 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { Col, Container, Row, Form, FormGroup } from "reactstrap";
 import Logo from "../components/Logo/Logo";
 import MenuDrink from "../components/Product/MenuDrink";
 import "../styles/checkout.css";
-import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Checkout = () => {
   const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const totalAmount = useSelector((state) => state.cart.totalAmount);
-  const Checkout = () => {
-    toast.success("Thank you for your ordering !!");
-  };
+
+  // const functions = require ("firebase-function");
+  // exports.createfirebaseCheckout = functions.https.onCall((data,context) => {
+
+  // });
   return (
     <Logo title="Checkout">
       <MenuDrink title="Checkout" />
@@ -55,11 +56,12 @@ const Checkout = () => {
                   {" "}
                   Total: <span>{totalAmount}</span>{" "}
                 </h4>
-                <button className="auth_btn" onClick={Checkout}>
+                <button className="auth_btn" id='checkout-button'>
                   {" "}
-                  <Link to="/Home"> Confirm payment </Link>
+                  <Link to="/Payment"> Checkout </Link>
                 </button>
               </div>
+
             </Col>
           </Row>
         </Container>

@@ -46,8 +46,8 @@ const SignIn = () => {
               </Col>
             ) : (
               <Col lg="5" className="m-auto text-center">
-                <h3 className="fw-bold fs-4"> Login </h3>
                 <Form className="auth_form" onSubmit={signIn}>
+                <h3 className="fw-bold fs-4"> Login </h3>
                   <FormGroup className="form_group">
                     <input
                       type="email"
