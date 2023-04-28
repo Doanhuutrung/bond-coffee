@@ -12,6 +12,7 @@ import AddDrink from "../admin/AddDrink";
 import ManageDrink from "../admin/ManageDrink";
 import Dashboard from "../admin/Dashboard";
 import Users from "../admin/Users";
+import Payment from "../Payment/Payment";
 
 const Routers = () => {
   return (
@@ -28,7 +29,7 @@ const Routers = () => {
         <Route path="Dashboard/Add-Drink" element={<AddDrink />} />
         <Route path="Dashboard/Users" element={<Users />} />
       </Route>
-
+      <Route path="Payment" element={<Payment/>} />
       <Route path="SignIn" element={<SignIn />} />
       <Route path="Signup" element={<Signup />} />
 

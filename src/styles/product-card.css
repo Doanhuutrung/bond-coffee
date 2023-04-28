@@ -36,4 +36,12 @@
 
 .product_item {
   cursor: pointer;
+
 }
+
+.product_img{
+  width: 100px;
+  /* height: 150px; */
+
+}
+

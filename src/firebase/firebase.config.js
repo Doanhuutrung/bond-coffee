@@ -14,12 +14,8 @@ const firebaseConfig = {
   appId: "1:156096224227:web:e0c94463e9e097d7c71ed6",
 };
 
-// Initialize Firebase
-// const checkoutButton = document.getElementById("checkout-button");
-// checkoutButton.addEventListener("click", () => {
-//   console.log("Clicked !!!");
-// });
 const app = initializeApp(firebaseConfig);
+
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
